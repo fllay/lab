@@ -2,6 +2,7 @@ import os
 import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
+import sys
 def xml_to_csv(path):
     xml_list = []
     for xml_file in glob.glob(path + '/*.xml'):
@@ -515,7 +516,6 @@ def training():
  
 import tuna
 import os
-from flask_ngrok import run_with_ngrok
 from flask import Flask, flash, request, redirect, url_for, send_file, jsonify
 from flask_cors import CORS
 import threading
@@ -668,12 +668,13 @@ def download():
 def home():
     return "AI Training Server on Google Colab!"
   
-# print("************************************************")
-# print("คลิ๊กลิ้งก์ ngrok.io (ด้านล่าง) เพื่อเข้าสู่ KidBright AI IDE")
-# print("คลิ๊กลิ้งก์ ngrok.io (ด้านล่าง) เพื่อเข้าสู่ KidBright AI IDE")
-# print("************************************************")
-# app.run()
 
-tuna.run_tuna(5000,"tunnel-f5af7d5f-03b7-41ca-baef-9e5dcb983868:b3c4e059-e744-4089-a87a-b02c9e3cdb45")
-app.run(host="0.0.0.0",debug=True)
+
+if __name__ == '__main__':
+    with open('/content/tt.txt') as f:
+        lines = f.readlines()
+    print(lines[0])
+    tuna.run_tuna(5000,lines[0])
+    app.run(host="0.0.0.0",debug=True)
+
 
