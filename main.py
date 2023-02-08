@@ -520,7 +520,7 @@ from flask import Flask, flash, request, redirect, url_for, send_file, jsonify
 from flask_cors import CORS
 import threading
 import time
-from pyngrok import ngrok
+
 
 UPLOAD_FOLDER = '/content'
 ALLOWED_EXTENSIONS = {'zip'}
