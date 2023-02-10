@@ -489,7 +489,7 @@ def training():
   steps2 = .9 * max_batches
   #steps1 = .1 * max_batches
   #steps2 = .2 * max_batches
-  steps_str = str(steps1)+','+str(steps2)
+  steps_str = 2000 #str(steps1)+','+str(steps2)
   num_filters = (num_classes + 5) * 3
 
 
